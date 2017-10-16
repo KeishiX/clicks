@@ -12,7 +12,7 @@ namespace libdraw
         protected ShapeDraw BoardShape;
         protected Font uiFont;
         protected int[,] gameBoard;
-        protected int bdRows, bdCols, SIZE;
+        protected int bdRows, bdCols, SIZE; // SIZE = size in pixels of one element on the board
 
         public GameDraw(int rows, int cols, int size)
         {

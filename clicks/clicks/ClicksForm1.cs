@@ -37,7 +37,8 @@ namespace ClicksGame
                 btnUndoTurn.Enabled = true;
                 btnUndoTurn.Visible = true;
             }
-            boardBox_MouseDown(this, new MouseEventArgs(MouseButtons.Right, 1, 300, 300, 0));
+            // boardBox_MouseDown(this, new MouseEventArgs(MouseButtons.Right, 1, 300, 300, 0));
+            boardBox.Invalidate();
             if(game.NoTurnCheck())
             {
                 infoPanel.Text = "Ходов больше нет";
@@ -90,6 +91,7 @@ namespace ClicksGame
             catch (System.IO.FileNotFoundException)
             {
                 gameStarted = false;
+                MessageBox.Show("Game drawing library libdrw.dll is not found", "Game loading error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
             if(gameStarted)
             {
@@ -102,7 +104,9 @@ namespace ClicksGame
             }
             // Next function is used for update board after starting new game from context menu
             // resolves bug #(?) **** 03.08.2016
-            boardBox_MouseDown(this, new MouseEventArgs(MouseButtons.Right, 1, 300, 300, 0));
+            // boardBox_MouseDown(this, new MouseEventArgs(MouseButtons.Right, 1, 300, 300, 0));
+            // replaceed with Invalidate() 16.10.2017
+            boardBox.Invalidate();
             boardBox.Focus();
         }
         private void quitGame_Click(object sender, EventArgs e)
