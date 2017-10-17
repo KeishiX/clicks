@@ -16,6 +16,7 @@ namespace ClicksGame
         private const int SIZE = 36;
         private bool noBackupTurns;
         private bool infiniteMode;
+        private bool infiniteEndlessMode;
         
 	    public ClicksComp(int s, int r, int c)
 	    {
@@ -43,6 +44,10 @@ namespace ClicksGame
         public bool Infinite
         {
             set { infiniteMode = value; }
+        }
+        public bool InfiniteEndless
+        {
+            set { infiniteEndlessMode = value; }
         }
         private int GenerateShape(int gameSkill)
         {
@@ -294,10 +299,14 @@ namespace ClicksGame
             if(infiniteMode)
             {
                 AddShape();
-                ShiftShape();
-                // For pure endless mode comment the line above and uncomment the line below
-                // ShiftShapeEndless();
-
+                if (infiniteEndlessMode)
+                {
+                    ShiftShapeEndless();
+                }
+                else
+                {
+                    ShiftShape();
+                }
                 // TODO
                 // Make an interface option for pure endless mode if normal endless option is selected
                 // i.e. an additional "pure" checkbox becomes visible if "normal" endless mode is selected

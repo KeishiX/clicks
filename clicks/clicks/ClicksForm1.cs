@@ -17,7 +17,7 @@ namespace ClicksGame
             InitializeComponent();
             
             // ClicksShape = DrawRShape;
-            this.Text = "Clicks " + ver.Major + "." + ver.Minor;
+            this.Text = "Clicks " + ver.Major + "." + ver.Minor + " Beta";
             try
             {
                 boardBox.BackgroundImage = Image.FromFile(@"back.jpg");
@@ -91,7 +91,7 @@ namespace ClicksGame
             catch (System.IO.FileNotFoundException)
             {
                 gameStarted = false;
-                MessageBox.Show("Game drawing library libdrw.dll is not found", "Game loading error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show("Game drawing library \'libdraw.dll\' is not found", "Game loading error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
             if(gameStarted)
             {
@@ -100,12 +100,13 @@ namespace ClicksGame
                 grpGame.Visible = true;
                 grpGame.Enabled = true;
                 game.Infinite = checkInfinite.Checked;
+                game.InfiniteEndless = checkInfiniteEndless.Checked;
                 // kPanel.Text = InfoKilled(board);
             }
-            // Next function is used for update board after starting new game from context menu
+            // Next function is used for board update after starting a new game from context menu
             // resolves bug #(?) **** 03.08.2016
             // boardBox_MouseDown(this, new MouseEventArgs(MouseButtons.Right, 1, 300, 300, 0));
-            // replaceed with Invalidate() 16.10.2017
+            // replaced with Invalidate() 16.10.2017
             boardBox.Invalidate();
             boardBox.Focus();
         }
@@ -124,6 +125,7 @@ namespace ClicksGame
             }
             infoPanel.Text = "Ход отменен";
             // ?
+            // Is this call really needed?
             // boardBox_MouseDown(this, new MouseEventArgs(MouseButtons.Right, 1, 300, 300, 0));
         }
         private void helpItem_Click(object sender, EventArgs e)

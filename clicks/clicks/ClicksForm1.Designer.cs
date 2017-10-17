@@ -48,6 +48,7 @@ namespace ClicksGame
             this.components = new System.ComponentModel.Container();
             this.grpStart = new System.Windows.Forms.GroupBox();
             this.checkInfinite = new System.Windows.Forms.CheckBox();
+            this.checkInfiniteEndless = new System.Windows.Forms.CheckBox();
             this.hardSkill = new System.Windows.Forms.RadioButton();
             this.normalSkill = new System.Windows.Forms.RadioButton();
             this.easySkill = new System.Windows.Forms.RadioButton();
@@ -80,6 +81,7 @@ namespace ClicksGame
             // grpStart
             // 
             this.grpStart.Controls.Add(this.checkInfinite);
+            this.grpStart.Controls.Add(this.checkInfiniteEndless);
             this.grpStart.Controls.Add(this.hardSkill);
             this.grpStart.Controls.Add(this.normalSkill);
             this.grpStart.Controls.Add(this.easySkill);
@@ -100,6 +102,16 @@ namespace ClicksGame
             this.checkInfinite.TabIndex = 6;
             this.checkInfinite.Text = "I&nfinite mode";
             this.checkInfinite.UseVisualStyleBackColor = true;
+            // 
+            // checkInfiniteEndless
+            // 
+            this.checkInfiniteEndless.AutoSize = true;
+            this.checkInfiniteEndless.Location = new System.Drawing.Point(315, 193);
+            this.checkInfiniteEndless.Name = "checkInfiniteEndless";
+            this.checkInfiniteEndless.Size = new System.Drawing.Size(86, 17);
+            this.checkInfiniteEndless.TabIndex = 7;
+            this.checkInfiniteEndless.Text = "Pure endless mode";
+            this.checkInfiniteEndless.UseVisualStyleBackColor = true;
             // 
             // hardSkill
             // 
@@ -346,6 +358,7 @@ namespace ClicksGame
         private ToolStripSeparator mnu1;
         private ToolStripSeparator mnu2;
         private CheckBox checkInfinite;
+        private CheckBox checkInfiniteEndless;
     }
 }
 
