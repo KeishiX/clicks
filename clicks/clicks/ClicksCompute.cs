@@ -44,10 +44,12 @@ namespace ClicksGame
         public bool Infinite
         {
             set { infiniteMode = value; }
+            get { return infiniteMode; }
         }
         public bool InfiniteEndless
         {
             set { infiniteEndlessMode = value; }
+            get { return infiniteEndlessMode; }
         }
         private int GenerateShape(int gameSkill)
         {
@@ -87,7 +89,7 @@ namespace ClicksGame
                     {
                         // y++;
                         // looks like this increment is not needed
-                        // at least its removal fixed bug #(?) with endless mode
+                        // at least its removal fixed bug #2 with endless mode
                         // but more tests is also needed
                         // the same fix is also applied to pure endless mode
                         // added 03.08.2016
@@ -307,9 +309,9 @@ namespace ClicksGame
                 {
                     ShiftShape();
                 }
-                // TODO
-                // Make an interface option for pure endless mode if normal endless option is selected
-                // i.e. an additional "pure" checkbox becomes visible if "normal" endless mode is selected
+                // TODO:
+                // Implement undo action so that it works as "real" undo, preserving already generated shapes
+                // instead of generating the new ones each turn after undo action was taken.
             }
             return true;
         }

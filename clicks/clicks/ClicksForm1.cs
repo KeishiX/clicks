@@ -102,9 +102,24 @@ namespace ClicksGame
                 game.Infinite = checkInfinite.Checked;
                 game.InfiniteEndless = checkInfiniteEndless.Checked;
                 // kPanel.Text = InfoKilled(board);
+                if(game.Infinite)
+                {
+                    if(game.InfiniteEndless)
+                    {
+                        modePanel.Text = "Pure endless mode";
+                    }
+                    else
+                    {
+                        modePanel.Text = "Infinite mode";
+                    }
+                }
+                else
+                {
+                    modePanel.Text = "Classic mode";
+                }
             }
             // Next function is used for board update after starting a new game from context menu
-            // resolves bug #(?) **** 03.08.2016
+            // resolves bug #1 **** 03.08.2016
             // boardBox_MouseDown(this, new MouseEventArgs(MouseButtons.Right, 1, 300, 300, 0));
             // replaced with Invalidate() 16.10.2017
             boardBox.Invalidate();
@@ -147,6 +162,7 @@ namespace ClicksGame
             btnUndoTurn.Visible = false;
             skillPanel.Text = "";
             infoPanel.Text = "";
+            modePanel.Text = "";
             undoItem.Enabled = false;
             exitItem.Enabled = false;
             btnUndoTurn.Enabled = false;
@@ -172,6 +188,20 @@ namespace ClicksGame
         private void startGame_Click(object sender, EventArgs e)
         {
             newGameItem_Click(newGameItem, new EventArgs());
+        }
+        private void checkInfinite_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkInfinite.Checked)
+            {
+                // checkInfiniteEndless.Visible = true;
+                checkInfiniteEndless.Enabled = true;
+            }
+            else
+            {
+                checkInfiniteEndless.Checked = false;
+                checkInfiniteEndless.Enabled = false;
+                // checkInfiniteEndless.Visible = false;
+            }
         }
     }
 }

@@ -69,6 +69,7 @@ namespace ClicksGame
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.skillPanel = new System.Windows.Forms.ToolStripStatusLabel();
             this.infoPanel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.modePanel = new System.Windows.Forms.ToolStripStatusLabel();
             this.kPanel = new System.Windows.Forms.ToolStripStatusLabel();
             this.grpStart.SuspendLayout();
             this.grpGame.SuspendLayout();
@@ -102,13 +103,15 @@ namespace ClicksGame
             this.checkInfinite.TabIndex = 6;
             this.checkInfinite.Text = "I&nfinite mode";
             this.checkInfinite.UseVisualStyleBackColor = true;
+            this.checkInfinite.CheckedChanged += new System.EventHandler(this.checkInfinite_CheckedChanged);
             // 
             // checkInfiniteEndless
             // 
             this.checkInfiniteEndless.AutoSize = true;
-            this.checkInfiniteEndless.Location = new System.Drawing.Point(315, 193);
+            this.checkInfiniteEndless.Enabled = false;
+            this.checkInfiniteEndless.Location = new System.Drawing.Point(318, 195);
             this.checkInfiniteEndless.Name = "checkInfiniteEndless";
-            this.checkInfiniteEndless.Size = new System.Drawing.Size(86, 17);
+            this.checkInfiniteEndless.Size = new System.Drawing.Size(116, 17);
             this.checkInfiniteEndless.TabIndex = 7;
             this.checkInfiniteEndless.Text = "Pure endless mode";
             this.checkInfiniteEndless.UseVisualStyleBackColor = true;
@@ -279,6 +282,7 @@ namespace ClicksGame
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.skillPanel,
             this.infoPanel,
+            this.modePanel,
             this.kPanel});
             this.statusStrip1.Location = new System.Drawing.Point(0, 458);
             this.statusStrip1.Name = "statusStrip1";
@@ -290,6 +294,7 @@ namespace ClicksGame
             // skillPanel
             // 
             this.skillPanel.AutoSize = false;
+            this.skillPanel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.skillPanel.Name = "skillPanel";
             this.skillPanel.Size = new System.Drawing.Size(132, 17);
             // 
@@ -300,11 +305,18 @@ namespace ClicksGame
             this.infoPanel.Name = "infoPanel";
             this.infoPanel.Size = new System.Drawing.Size(180, 17);
             // 
+            // modePanel
+            // 
+            this.modePanel.AutoSize = false;
+            this.modePanel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.modePanel.Name = "modePanel";
+            this.modePanel.Size = new System.Drawing.Size(153, 17);
+            // 
             // kPanel
             // 
             this.kPanel.AutoSize = false;
             this.kPanel.Name = "kPanel";
-            this.kPanel.Size = new System.Drawing.Size(555, 17);
+            this.kPanel.Size = new System.Drawing.Size(371, 17);
             this.kPanel.Spring = true;
             // 
             // ClicksForm1
@@ -359,6 +371,7 @@ namespace ClicksGame
         private ToolStripSeparator mnu2;
         private CheckBox checkInfinite;
         private CheckBox checkInfiniteEndless;
+        private ToolStripStatusLabel modePanel;
     }
 }
 
