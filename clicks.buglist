@@ -28,6 +28,12 @@ exploit issue:
 - в бесконечном режиме, при отмене не сохраняется цвет добавленного элемента,
   что позволяет за счёт отмены ходов подбирать более подходящий цвет
 
-bug #4
+bug #4:
 - при запуске игры, если не найден libdraw.dll в tool-панели отображается
   сложность выбранной игры, хотя игра не активируется.
+
+UI redesign (start screen):
+- place both buttons at the bottom of the form
+- rename 'New Game' to 'Start Game', and make it bigger size
+- rename 'Exit' to 'Exit game, palce it under 'Start Game', and make it
+  smaller size
