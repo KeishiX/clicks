@@ -31,6 +31,12 @@ exploit issue:
 bug #4:
 - при запуске игры, если не найден libdraw.dll в tool-панели отображается
   сложность выбранной игры, хотя игра не активируется.
+  
+bug #5:
+- labels for 'Normal' and 'Infinite mode' use same accelerator ('n').
+
+bug #6:
+- label for 'Pure endless mode' does not have accelerator.
 
 UI redesign (start screen):
 - place both buttons at the bottom of the form

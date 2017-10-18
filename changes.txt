@@ -1,0 +1,25 @@
+Version 1.8
+
+added:
+  - added pure endless mode which further extends "Infinite" mode. In this
+    mode a new shape is always generated, even if a column was completely
+    cleared on previous turn.
+
+fixed:    
+  - minor UI bug on the start screen.
+  - hotkeys for controls on the start screen.
+  - start screen slightly redesigned for better user experience.
+
+
+Version 1.7
+
+fixed:
+  - a couple of UI bugs on program form.
+  - serious game logic bug in infinite mode.
+  - game board does not updates after starting a new game using a hotkey or
+    context menu after the game was already started.
+
+
+Version 1.6 (also 1.5 and older)
+
+  - Initial release (no changes recorded).
