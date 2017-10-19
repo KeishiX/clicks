@@ -30,3 +30,7 @@ exploit issue:
 
 
 add: pure endless mode selection from start screen
+
+bug #4:
+- при запуске игры, если не найден libdraw.dll в tool-панели отображается
+  сложность выбранной игры, хотя игра не активируется.
