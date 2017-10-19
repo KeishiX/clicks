@@ -43,3 +43,8 @@ UI redesign (start screen):
 - rename 'New Game' to 'Start Game', and make it bigger size
 - rename 'Exit' to 'Exit game, palce it under 'Start Game', and make it
   smaller size
+
+feature/bug (by design):
+- in pure endless mode if a column was emptied it then shifts, and after
+  that a new shape has been added, while shape shifting must not occur at all,
+  and the new shape be added at the place of emptied column.
