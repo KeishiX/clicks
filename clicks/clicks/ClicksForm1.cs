@@ -91,6 +91,7 @@ namespace ClicksGame
             catch (System.IO.FileNotFoundException)
             {
                 gameStarted = false;
+                skillPanel.Text = "";
                 MessageBox.Show("Game drawing library \'libdraw.dll\' is not found", "Game loading error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
             if(gameStarted)

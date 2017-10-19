@@ -7,7 +7,7 @@ added:
 
 fixed:    
   - minor UI bug on the start screen.
-  - hotkeys for controls on the start screen.
+  - duplicate hotkeys for controls on the start screen.
   - start screen slightly redesigned for better user experience.
 
 
