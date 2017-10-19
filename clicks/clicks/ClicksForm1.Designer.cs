@@ -97,11 +97,11 @@ namespace ClicksGame
             // checkInfinite
             // 
             this.checkInfinite.AutoSize = true;
-            this.checkInfinite.Location = new System.Drawing.Point(299, 173);
+            this.checkInfinite.Location = new System.Drawing.Point(299, 172);
             this.checkInfinite.Name = "checkInfinite";
             this.checkInfinite.Size = new System.Drawing.Size(86, 17);
             this.checkInfinite.TabIndex = 6;
-            this.checkInfinite.Text = "I&nfinite mode";
+            this.checkInfinite.Text = "In&finite mode";
             this.checkInfinite.UseVisualStyleBackColor = true;
             this.checkInfinite.CheckedChanged += new System.EventHandler(this.checkInfinite_CheckedChanged);
             // 
@@ -113,7 +113,7 @@ namespace ClicksGame
             this.checkInfiniteEndless.Name = "checkInfiniteEndless";
             this.checkInfiniteEndless.Size = new System.Drawing.Size(116, 17);
             this.checkInfiniteEndless.TabIndex = 7;
-            this.checkInfiniteEndless.Text = "Pure endless mode";
+            this.checkInfiniteEndless.Text = "&Pure endless mode";
             this.checkInfiniteEndless.UseVisualStyleBackColor = true;
             // 
             // hardSkill
@@ -150,9 +150,9 @@ namespace ClicksGame
             // 
             // quitGame
             // 
-            this.quitGame.Location = new System.Drawing.Point(263, 352);
+            this.quitGame.Location = new System.Drawing.Point(283, 352);
             this.quitGame.Name = "quitGame";
-            this.quitGame.Size = new System.Drawing.Size(134, 47);
+            this.quitGame.Size = new System.Drawing.Size(94, 30);
             this.quitGame.TabIndex = 2;
             this.quitGame.Text = "E&xit";
             this.quitGame.UseVisualStyleBackColor = true;
@@ -160,11 +160,11 @@ namespace ClicksGame
             // 
             // startGame
             // 
-            this.startGame.Location = new System.Drawing.Point(263, 50);
+            this.startGame.Location = new System.Drawing.Point(252, 253);
             this.startGame.Name = "startGame";
-            this.startGame.Size = new System.Drawing.Size(134, 47);
+            this.startGame.Size = new System.Drawing.Size(156, 58);
             this.startGame.TabIndex = 1;
-            this.startGame.Text = "New &Game";
+            this.startGame.Text = "Start &Game";
             this.startGame.UseVisualStyleBackColor = true;
             this.startGame.Click += new System.EventHandler(this.startGame_Click);
             // 
@@ -316,7 +316,7 @@ namespace ClicksGame
             // 
             this.kPanel.AutoSize = false;
             this.kPanel.Name = "kPanel";
-            this.kPanel.Size = new System.Drawing.Size(371, 17);
+            this.kPanel.Size = new System.Drawing.Size(402, 17);
             this.kPanel.Spring = true;
             // 
             // ClicksForm1
