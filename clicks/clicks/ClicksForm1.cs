@@ -17,7 +17,7 @@ namespace ClicksGame
             InitializeComponent();
             
             // ClicksShape = DrawRShape;
-            this.Text = "Clicks " + ver.Major + "." + ver.Minor + " Beta";
+            this.Text = "Clicks " + ver.Major + "." + ver.Minor;
             try
             {
                 boardBox.BackgroundImage = Image.FromFile(@"back.jpg");
@@ -176,7 +176,7 @@ namespace ClicksGame
         {
             game = new ClicksComp(skill, boardRows, boardCols);
             drw = new ClicksDraw(boardRows, boardCols);
-            infoPanel.Text = "";
+            infoPanel.Text = ""; // This text clearing may not be needed
             undoItem.Enabled = false;
             btnUndoTurn.Enabled = false;
             btnUndoTurn.Visible = false;

@@ -272,30 +272,33 @@ namespace ClicksGame
                 }
             }
             // Сдвиг массива по горизонтали
-            j0 = 0;
-            while (j0 < j_max)
+            if (!infiniteEndlessMode)    /* this condition fixes pure endless mode unneeded horizontal shift */
             {
-                if (board[i_max, j0] == 0) break;
-                j0++;
-            }
-            j = j0 + 1;
-            while (true)
-            {
-                if (j0 == j_max) break;
-                while (j <= j_max)
+                j0 = 0;
+                while (j0 < j_max)
                 {
-                    if (board[i_max, j] != 0) break;
+                    if (board[i_max, j0] == 0) break;
+                    j0++;
+                }
+                j = j0 + 1;
+                while (true)
+                {
+                    if (j0 == j_max) break;
+                    while (j <= j_max)
+                    {
+                        if (board[i_max, j] != 0) break;
+                        j++;
+                    }
+                    if (j > j_max) break;
+                    for (i = i_max; i >= 0; i--)
+                    {
+                        if (board[i, j] == 0) break;
+                        board[i, j0] = board[i, j];
+                        board[i, j] = 0;
+                    }
+                    j0++;
                     j++;
                 }
-                if (j > j_max) break;
-                for (i = i_max; i >= 0; i--)
-                {
-                    if (board[i, j] == 0) break;
-                    board[i, j0] = board[i, j];
-                    board[i, j] = 0;
-                }
-                j0++;
-                j++;
             }
             /* *** */
             if(infiniteMode)
