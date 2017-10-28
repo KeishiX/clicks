@@ -91,7 +91,8 @@ namespace ClicksGame
             catch (System.IO.FileNotFoundException)
             {
                 gameStarted = false;
-                MessageBox.Show("Game drawing library libdrw.dll is not found", "Game loading error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                skillPanel.Text = "";
+                MessageBox.Show("Game drawing library \'libdraw.dll\' is not found", "Game loading error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
             if(gameStarted)
             {
@@ -100,12 +101,28 @@ namespace ClicksGame
                 grpGame.Visible = true;
                 grpGame.Enabled = true;
                 game.Infinite = checkInfinite.Checked;
+                game.InfiniteEndless = checkInfiniteEndless.Checked;
                 // kPanel.Text = InfoKilled(board);
+                if(game.Infinite)
+                {
+                    if(game.InfiniteEndless)
+                    {
+                        modePanel.Text = "Pure endless mode";
+                    }
+                    else
+                    {
+                        modePanel.Text = "Infinite mode";
+                    }
+                }
+                else
+                {
+                    modePanel.Text = "Classic mode";
+                }
             }
-            // Next function is used for update board after starting new game from context menu
-            // resolves bug #(?) **** 03.08.2016
+            // Next function is used for board update after starting a new game from context menu
+            // resolves bug #1 **** 03.08.2016
             // boardBox_MouseDown(this, new MouseEventArgs(MouseButtons.Right, 1, 300, 300, 0));
-            // replaceed with Invalidate() 16.10.2017
+            // replaced with Invalidate() 16.10.2017
             boardBox.Invalidate();
             boardBox.Focus();
         }
@@ -124,6 +141,7 @@ namespace ClicksGame
             }
             infoPanel.Text = "Ход отменен";
             // ?
+            // Is this call really needed?
             // boardBox_MouseDown(this, new MouseEventArgs(MouseButtons.Right, 1, 300, 300, 0));
         }
         private void helpItem_Click(object sender, EventArgs e)
@@ -145,6 +163,7 @@ namespace ClicksGame
             btnUndoTurn.Visible = false;
             skillPanel.Text = "";
             infoPanel.Text = "";
+            modePanel.Text = "";
             undoItem.Enabled = false;
             exitItem.Enabled = false;
             btnUndoTurn.Enabled = false;
@@ -157,7 +176,7 @@ namespace ClicksGame
         {
             game = new ClicksComp(skill, boardRows, boardCols);
             drw = new ClicksDraw(boardRows, boardCols);
-            infoPanel.Text = "";
+            infoPanel.Text = ""; // This text clearing may not be needed
             undoItem.Enabled = false;
             btnUndoTurn.Enabled = false;
             btnUndoTurn.Visible = false;
@@ -170,6 +189,20 @@ namespace ClicksGame
         private void startGame_Click(object sender, EventArgs e)
         {
             newGameItem_Click(newGameItem, new EventArgs());
+        }
+        private void checkInfinite_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkInfinite.Checked)
+            {
+                // checkInfiniteEndless.Visible = true;
+                checkInfiniteEndless.Enabled = true;
+            }
+            else
+            {
+                checkInfiniteEndless.Checked = false;
+                checkInfiniteEndless.Enabled = false;
+                // checkInfiniteEndless.Visible = false;
+            }
         }
     }
 }
