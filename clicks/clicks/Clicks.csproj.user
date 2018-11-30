@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <ReferencePath>D:\home\Visual Studio 2010\Projects\libdraw\libdraw\bin\Release\</ReferencePath>
+    <ReferencePath>D:\work\src\cs\clicks\libdraw\libdraw\bin\Release\</ReferencePath>
   </PropertyGroup>
 </Project>

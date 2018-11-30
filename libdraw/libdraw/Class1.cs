@@ -93,19 +93,30 @@ namespace libdraw
 
         private void DrawShapeClicks(PaintEventArgs e, int locX, int locY)
         {
-            char sym = MakeBoardSymbol(locY, locX);
+            // char sym = MakeBoardSymbol(locY, locX);
+            string sym = MakeBoardSymbol(locY, locX).ToString();
+            int sShift = 4;
             Graphics cg = e.Graphics;
 
             var x = locX * SIZE;
             var y = locY * SIZE;
 
             var ptCenter = new PointF(x + SIZE / 2.0f, y + SIZE / 2.0f);
+            /*
             var quadPoint = new[]
             {
-                new Point(x,y), 
+                new Point(x,y),
                 new Point(x, y + SIZE), 
                 new Point(x + SIZE, y + SIZE), 
                 new Point(x + SIZE, y)
+            };
+            */
+            var quadPoint = new[]
+            {
+                new Point(x + sShift, y + sShift),
+                new Point(x + sShift, (y + SIZE) - sShift), 
+                new Point((x + SIZE) - sShift, (y + SIZE) - sShift), 
+                new Point((x + SIZE) - sShift, y + sShift)
             };
             var qbr = new PathGradientBrush(quadPoint) { CenterColor = Color.White, CenterPoint = ptCenter };
             var tpr = new SolidBrush(Color.Transparent);
@@ -141,7 +152,8 @@ namespace libdraw
                     break;
             }
             cg.FillRectangle(qbr, rtg);
-            cg.DrawString(sym.ToString(), uiFont, foreBrush, (x - 2),  (y + 2));
+            // cg.DrawString(sym.ToString(), uiFont, foreBrush, (x - 2),  (y + 2));
+            cg.DrawString(sym, uiFont, foreBrush, (x - 2), (y + 2));
             cg.DrawRectangle(pb, rtg);
             clean:
             qbr.Dispose();
@@ -194,6 +206,11 @@ namespace libdraw
                 Color.FromArgb(204, 102, 204)
             };
         }
+/*        private InitShape(PaintEventArgs e)
+        {
+            // 
+        }
+*/
     }
 
 }

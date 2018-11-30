@@ -164,6 +164,10 @@ namespace ClicksGame
         }
         private void BackupTurn()
         {
+            if (infiniteEndlessMode)
+            {
+                undoContainer.Clear();
+            }
             for (var i = 0; i < bdRows; i++)
             {
                 for (var j = 0; j < bdCols; j++)
