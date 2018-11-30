@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
@@ -95,14 +96,17 @@ namespace libdraw
         {
             // char sym = MakeBoardSymbol(locY, locX);
             string sym = MakeBoardSymbol(locY, locX).ToString();
-            int sShift = 4;
+            Bitmap image_red = new Bitmap(SIZE, SIZE);
+            // Bitmap image0 = null;
+
             Graphics cg = e.Graphics;
+            // Graphics cg_r = Graphics.FromImage(image_red);
+            string shapeFileName = "";
 
             var x = locX * SIZE;
             var y = locY * SIZE;
 
             var ptCenter = new PointF(x + SIZE / 2.0f, y + SIZE / 2.0f);
-            /*
             var quadPoint = new[]
             {
                 new Point(x,y),
@@ -110,14 +114,7 @@ namespace libdraw
                 new Point(x + SIZE, y + SIZE), 
                 new Point(x + SIZE, y)
             };
-            */
-            var quadPoint = new[]
-            {
-                new Point(x + sShift, y + sShift),
-                new Point(x + sShift, (y + SIZE) - sShift), 
-                new Point((x + SIZE) - sShift, (y + SIZE) - sShift), 
-                new Point((x + SIZE) - sShift, y + sShift)
-            };
+
             var qbr = new PathGradientBrush(quadPoint) { CenterColor = Color.White, CenterPoint = ptCenter };
             var tpr = new SolidBrush(Color.Transparent);
             var foreBrush = new SolidBrush(Color.DarkSlateGray);
@@ -130,32 +127,66 @@ namespace libdraw
             switch (gameBoard[locY, locX])
             {
                 case (int)shapeColor.TRANSP:
+                    shapeFileName = "shape0.png";
                     cg.FillRectangle(tpr, rtge);
                     goto clean;
                 case (int)shapeColor.RED:
                     qbr.SurroundColors = colorRed;
-                    break;
+                    shapeFileName = "shape1.png";
+                    // TEST
+                    // image_red.Save(shapeFileName);
+                    // image_red.Dispose();
+                    /*
+                    using (Graphics cg_r = Graphics.FromImage(Image.FromFile(shapeFileName)))
+                    {
+                        cg_r.FillRectangle(qbr, rtg);
+                        cg_r.DrawString(sym, uiFont, foreBrush, (x - 2), (y + 2));
+                        cg_r.DrawRectangle(pb, rtg);
+                        image_red = new Bitmap(SIZE, SIZE, cg_r);
+                        image_red = new Bitmap()
+                    }
+                    */
+                    // image_red.Save(shapeFileName, ImageFormat.Png);
+                    image_red = (Bitmap)Image.FromFile(shapeFileName);
+                    cg.DrawImage(image_red, rtg);
+                    goto clean;
+                    // break;
                 case (int)shapeColor.GREEN:
                     qbr.SurroundColors = colorGreen;
+                    shapeFileName = "shape2.png";
                     break;
                 case (int)shapeColor.YELLOW:
                     qbr.SurroundColors = colorYellow;
+                    shapeFileName = "shape3.png";
                     break;
                 case (int)shapeColor.BROWN:
                     qbr.SurroundColors = colorBrown;
+                    shapeFileName = "shape4.png";
                     break;
                 case (int)shapeColor.BLUE:
                     qbr.SurroundColors = colorBlue;
+                    shapeFileName = "shape5.png";
                     break;
                 case (int)shapeColor.PURPLE:
                     qbr.SurroundColors = colorPurple;
+                    shapeFileName = "shape6.png";
                     break;
             }
+
             cg.FillRectangle(qbr, rtg);
-            // cg.DrawString(sym.ToString(), uiFont, foreBrush, (x - 2),  (y + 2));
+            // cgf.FillRectangle(qbr, rtg);
+
             cg.DrawString(sym, uiFont, foreBrush, (x - 2), (y + 2));
+            // cgf.DrawString(sym, uiFont, foreBrush, (x - 2), (y + 2));
+
             cg.DrawRectangle(pb, rtg);
+            // cgf.DrawRectangle(pb, rtg);
+
             clean:
+            
+            // image0.Save("n_" + shapeFileName, ImageFormat.Png);
+            // image.Dispose();
+
             qbr.Dispose();
             tpr.Dispose();
             pb.Dispose();
