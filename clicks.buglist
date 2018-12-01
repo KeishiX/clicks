@@ -33,10 +33,10 @@ bug #4:
   сложность выбранной игры, хотя игра не активируется.
   
 bug #5:
-- labels for 'Normal' and 'Infinite mode' use same accelerator ('n').
+- labels for 'Normal' and 'Infinite mode' use the same accelerator ('n').
 
 bug #6:
-- label for 'Pure endless mode' does not have accelerator.
+- label for 'Pure endless mode' does not have an accelerator.
 
 UI redesign (start screen):
 - place both buttons at the bottom of the form
@@ -46,5 +46,5 @@ UI redesign (start screen):
 
 feature/bug (by design):
 - in pure endless mode if a column was emptied it then shifts, and after
-  that a new shape has been added, while shape shifting must not occur at all,
-  and the new shape be added at the place of emptied column.
+  that a new shape is added, while the shape shifting must not occur at all,
+  and a new shape should be added at the place of the emptied column.

@@ -150,9 +150,9 @@ namespace ClicksGame
             // 
             // quitGame
             // 
-            this.quitGame.Location = new System.Drawing.Point(283, 352);
+            this.quitGame.Location = new System.Drawing.Point(283, 370);
             this.quitGame.Name = "quitGame";
-            this.quitGame.Size = new System.Drawing.Size(94, 30);
+            this.quitGame.Size = new System.Drawing.Size(94, 28);
             this.quitGame.TabIndex = 2;
             this.quitGame.Text = "E&xit";
             this.quitGame.UseVisualStyleBackColor = true;
@@ -160,9 +160,9 @@ namespace ClicksGame
             // 
             // startGame
             // 
-            this.startGame.Location = new System.Drawing.Point(252, 253);
+            this.startGame.Location = new System.Drawing.Point(252, 250);
             this.startGame.Name = "startGame";
-            this.startGame.Size = new System.Drawing.Size(156, 58);
+            this.startGame.Size = new System.Drawing.Size(156, 56);
             this.startGame.TabIndex = 1;
             this.startGame.Text = "Start &Game";
             this.startGame.UseVisualStyleBackColor = true;
@@ -183,7 +183,7 @@ namespace ClicksGame
             this.boardBox.BackgroundImage = global::ClicksGame.Properties.Resources.Image1;
             this.boardBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.boardBox.ContextMenuStrip = this.menuStrip1;
-            this.boardBox.Location = new System.Drawing.Point(6, 12);
+            this.boardBox.Location = new System.Drawing.Point(6, 14);
             this.boardBox.Name = "boardBox";
             this.boardBox.Size = new System.Drawing.Size(649, 433);
             this.boardBox.TabIndex = 0;
@@ -203,26 +203,26 @@ namespace ClicksGame
             this.mnu2,
             this.exitProgramItem});
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(221, 126);
+            this.menuStrip1.Size = new System.Drawing.Size(216, 126);
             // 
             // helpItem
             // 
             this.helpItem.Name = "helpItem";
             this.helpItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.helpItem.Size = new System.Drawing.Size(220, 22);
+            this.helpItem.Size = new System.Drawing.Size(215, 22);
             this.helpItem.Text = "Help";
             this.helpItem.Click += new System.EventHandler(this.helpItem_Click);
             // 
             // mnu1
             // 
             this.mnu1.Name = "mnu1";
-            this.mnu1.Size = new System.Drawing.Size(217, 6);
+            this.mnu1.Size = new System.Drawing.Size(212, 6);
             // 
             // newGameItem
             // 
             this.newGameItem.Name = "newGameItem";
             this.newGameItem.ShortcutKeys = System.Windows.Forms.Keys.F2;
-            this.newGameItem.Size = new System.Drawing.Size(220, 22);
+            this.newGameItem.Size = new System.Drawing.Size(215, 22);
             this.newGameItem.Text = "New Game";
             this.newGameItem.Click += new System.EventHandler(this.newGameItem_Click);
             // 
@@ -230,7 +230,7 @@ namespace ClicksGame
             // 
             this.undoItem.Name = "undoItem";
             this.undoItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.undoItem.Size = new System.Drawing.Size(220, 22);
+            this.undoItem.Size = new System.Drawing.Size(215, 22);
             this.undoItem.Text = "Undo turn";
             this.undoItem.Click += new System.EventHandler(this.undoItem_Click);
             // 
@@ -238,20 +238,20 @@ namespace ClicksGame
             // 
             this.exitItem.Name = "exitItem";
             this.exitItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
-            this.exitItem.Size = new System.Drawing.Size(220, 22);
+            this.exitItem.Size = new System.Drawing.Size(215, 22);
             this.exitItem.Text = "Close current game";
             this.exitItem.Click += new System.EventHandler(this.exitItem_Click);
             // 
             // mnu2
             // 
             this.mnu2.Name = "mnu2";
-            this.mnu2.Size = new System.Drawing.Size(217, 6);
+            this.mnu2.Size = new System.Drawing.Size(212, 6);
             // 
             // exitProgramItem
             // 
             this.exitProgramItem.Name = "exitProgramItem";
             this.exitProgramItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.exitProgramItem.Size = new System.Drawing.Size(220, 22);
+            this.exitProgramItem.Size = new System.Drawing.Size(215, 22);
             this.exitProgramItem.Text = "Exit Program";
             this.exitProgramItem.Click += new System.EventHandler(this.exitProgramItem_Click);
             // 

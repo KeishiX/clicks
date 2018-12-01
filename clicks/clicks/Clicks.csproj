@@ -41,6 +41,8 @@
   <ItemGroup>
     <Reference Include="libdraw, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\libdraw\libdraw\bin\Release\libdraw.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
