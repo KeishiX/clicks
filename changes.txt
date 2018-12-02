@@ -1,3 +1,22 @@
+Version 1.9
+
+added:
+  - single turn undo for pure endless mode
+
+changed:
+  - libdraw.dll updated to version 1.3, still remains compatible with older
+    Clicks versions.
+  - graphics changed from procedural generagion to a premade internal texture.
+  - greatly reduced memory consumption (up to 1.5x times).
+  - reduced size of the embedded background picture by 40% .
+  - slightly changed size and positioning of some elements on the starting
+    screen for better UX.
+  - all shape generation drawings moved to a child project "texturegen".
+
+fixed:
+  - none.
+
+
 Version 1.8
 
 added:

@@ -1,6 +1,7 @@
 ﻿using System;
 using libdraw;
 using System.Collections;
+using System.Threading;
 
 namespace ClicksGame
 {
@@ -17,10 +18,13 @@ namespace ClicksGame
         private bool noBackupTurns;
         private bool infiniteMode;
         private bool infiniteEndlessMode;
-        
-	    public ClicksComp(int s, int r, int c)
+
+        private Thread initThread;
+
+        public ClicksComp(int s, int r, int c)
 	    {
             rBase = new Random(rInit.Next());
+            initThread = new Thread(new ThreadStart(InitBoard));
             undoContainer.Clear();
             compSkill = Math.Abs(s);
             bdRows = Math.Abs(r);
@@ -31,7 +35,8 @@ namespace ClicksGame
             }
             board = new int[bdRows, bdCols];
             bdUndo = new int[bdRows, bdCols];
-            InitBoard();
+            initThread.Start();
+            // InitBoard();
     	}
         public int [,] Bd
         {
