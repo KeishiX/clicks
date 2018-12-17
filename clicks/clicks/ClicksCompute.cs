@@ -95,7 +95,7 @@ namespace ClicksGame
                         // y++;
                         // looks like this increment is not needed
                         // at least its removal fixed bug #2 with endless mode
-                        // but more tests is also needed
+                        // but more tests are also needed
                         // the same fix is also applied to pure endless mode
                         // added 03.08.2016
                         continue;

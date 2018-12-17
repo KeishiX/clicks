@@ -14,8 +14,8 @@ namespace libdraw
         protected Font uiFont;
         protected int[,] gameBoard;
         protected int bdRows, bdCols, SIZE; 
-        // SIZE is one shape size in pixels, which means the shape is a square, and this perfectly suits chess-like games (and Clicks)
-        // use a multiplier for non-square shapes
+        // SIZE is a shape size in pixels, which means the shape is a square, and this perfectly suits chess-like games (and Clicks)
+        // use a multiplier for rectangular shapes with different side length.
 
         public GameDraw(int rows, int cols, int size)
         {
@@ -77,7 +77,8 @@ namespace libdraw
         public ClicksDraw(int rows, int cols, int size) : base(rows, cols, size)
         {
             BoardShape = DrawShapeClicks;
-            uiFont = new Font("MS Mincho", (float)Math.Round(SIZE * 0.6388888f));
+            // font usage is no longer needed in version 1.3+ to draw Clicks board
+            // uiFont = new Font("MS Mincho", (float)Math.Round(SIZE * 0.6388888f));
             shapeImage = Properties.Resources.shapeTexture;
         }
 
@@ -118,7 +119,7 @@ namespace libdraw
             switch (gameBoard[locY, locX])
             {
                 case (int)shapeColor.TRANSP:
-                    // There's no need to draw anything in this case since v. 1.9, 
+                    // There's no need to draw anything in this case since libdraw v. 1.3, 
                     // but this case is required to skip grid drawing over empty spaces
                     goto no_grid_draw;
                 case (int)shapeColor.RED:
