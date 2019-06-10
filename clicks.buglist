@@ -28,23 +28,24 @@ exploit issue:
 - в бесконечном режиме, при отмене не сохраняется цвет добавленного элемента,
   что позволяет за счёт отмены ходов подбирать более подходящий цвет
 
-bug #4:
+bug #4: fixed
 - при запуске игры, если не найден libdraw.dll в tool-панели отображается
   сложность выбранной игры, хотя игра не активируется.
   
-bug #5:
+bug #5: fixed
 - labels for 'Normal' and 'Infinite mode' use the same accelerator ('n').
 
-bug #6:
+bug #6: fixed
 - label for 'Pure endless mode' does not have an accelerator.
 
-UI redesign (start screen):
+UI redesign (start screen): Done
 - place both buttons at the bottom of the form
 - rename 'New Game' to 'Start Game', and make it bigger size
 - rename 'Exit' to 'Exit game, palce it under 'Start Game', and make it
   smaller size
 
-feature/bug (by design):
+feature/bug (by design): fixed
 - in pure endless mode if a column was emptied it then shifts, and after
   that a new shape is added, while the shape shifting must not occur at all,
   and a new shape should be added at the place of the emptied column.
+
