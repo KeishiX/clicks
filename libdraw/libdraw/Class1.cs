@@ -77,7 +77,7 @@ namespace libdraw
         public ClicksDraw(int rows, int cols, int size) : base(rows, cols, size)
         {
             BoardShape = DrawShapeClicks;
-            // font usage is no longer needed in version 1.3+ to draw Clicks board
+            // font is no longer used in version 1.3+ to draw Clicks board
             // uiFont = new Font("MS Mincho", (float)Math.Round(SIZE * 0.6388888f));
             shapeImage = Properties.Resources.shapeTexture;
         }
@@ -120,7 +120,7 @@ namespace libdraw
             {
                 case (int)shapeColor.TRANSP:
                     // There's no need to draw anything in this case since libdraw v. 1.3, 
-                    // but this case is required to skip grid drawing over empty spaces
+                    // but this case is REQUIRED to skip grid drawing over empty spaces
                     goto no_grid_draw;
                 case (int)shapeColor.RED:
                     cg.DrawImage(shapeImage, rtg, new Rectangle(SIZE * (int)shapeColor.RED, 0, SIZE, SIZE), GraphicsUnit.Pixel);
