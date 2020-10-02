@@ -18,6 +18,7 @@ namespace ClicksGame
             
             // ClicksShape = DrawRShape;
             this.Text = "Clicks " + ver.Major + "." + ver.Minor;
+            /* change to file not found and bad format exceptions */
             try
             {
                 boardBox.BackgroundImage = Image.FromFile(@"back.jpg");
