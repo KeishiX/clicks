@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("libdraw")]
-[assembly: AssemblyCopyright("anty © 2000-20019, Clicks © 2013-2019")]
+[assembly: AssemblyCopyright("anty © 2000-2021, Clicks © 2013-2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
