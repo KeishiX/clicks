@@ -37,10 +37,17 @@ namespace ClicksGame
             bdUndo = new int[bdRows, bdCols];
             initThread.Start();
             // InitBoard();
-    	}
+        }
         public int [,] Bd
         {
             get { return board; }
+        }
+        // Win condition: if there's empty cell in the lowest left corner then
+        // the whole board must be cleared. So get this value when checking 
+        // NoTurn condition 
+        public int CurrentBdState
+        {
+            get { return board[bdRows - 1, 0]; }
         }
         public bool NoUndo
         {
@@ -196,7 +203,7 @@ namespace ClicksGame
                     if ((i - 1) >= 0)
                         if (board[i - 1, j] == color)
                             return false;
-                    if ((j + 1 <= j_max))
+                    if ((j + 1) <= j_max) // 3.04.2021 change   -- check for bugs after change --
                         if (board[i, j + 1] == color)
                             return false;
                 }
@@ -281,7 +288,7 @@ namespace ClicksGame
                 }
             }
             // Сдвиг массива по горизонтали
-            if (!infiniteEndlessMode)    /* this condition fixes pure endless mode unneeded horizontal shift */
+            if (!infiniteEndlessMode)    /* this condition fixes pure endless mode unintended horizontal shift */
             {
                 j0 = 0;
                 while (j0 < j_max)

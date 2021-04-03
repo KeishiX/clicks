@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections;
+// using System.Collections;
 using System.Windows.Forms;
 using libdraw;
 
@@ -18,7 +18,13 @@ namespace ClicksGame
         private GameDraw drw;
         private ClicksComp game;
         private static Version ver;
+        private readonly string gameLibText = "Game drawing library \'libdraw.dll\'";
+        private readonly string libLoadErrText= " could not be loaded";
+        private readonly string libNotFoundErrText = " is not found";
+        private readonly string libLoadErrCaption = "Library loading error";
         private string helpMsg = "[PH]help text here";
+        private readonly string gameWonCaption = "Congratulations!";
+        private readonly string gameOverCaption = "Game Over";
         /// <summary>
         /// Required designer variable.
         /// </summary>

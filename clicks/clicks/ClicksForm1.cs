@@ -25,8 +25,7 @@ namespace ClicksGame
             }
             catch(Exception)
             {
-            //   MessageBox.Show("Background image not found", "File not found", MessageBoxButtons.OK,
-            //                    MessageBoxIcon.Warning);
+                // Silently proceed if no custom background file
             }
         }
         private void TurnClick(int xPointClicked, int yPointClicked)
@@ -42,9 +41,17 @@ namespace ClicksGame
             boardBox.Invalidate();
             if(game.NoTurnCheck())
             {
-                infoPanel.Text = "Ходов больше нет";
-                var res = MessageBox.Show("End game?", "Game Over", MessageBoxButtons.YesNo,
-                                                   MessageBoxIcon.Question);
+                var res = DialogResult.OK;
+                if (game.CurrentBdState == 0)
+                {
+                    infoPanel.Text = "Board cleared";
+                    _ = MessageBox.Show("You won the game.", gameWonCaption, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    infoPanel.Text = "No more turns";
+                    res = MessageBox.Show("End game?", gameOverCaption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                }
                 if(res == DialogResult.No)
                     undoItem_Click(undoItem, new EventArgs());
                 else
@@ -93,7 +100,13 @@ namespace ClicksGame
             {
                 gameStarted = false;
                 skillPanel.Text = "";
-                MessageBox.Show("Game drawing library \'libdraw.dll\' is not found", "Game loading error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                _ = MessageBox.Show(gameLibText + libNotFoundErrText, caption: libLoadErrCaption, MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            catch (System.IO.FileLoadException)
+            {
+                gameStarted = false;
+                skillPanel.Text = "";
+                _ = MessageBox.Show(gameLibText + libLoadErrText, caption: libLoadErrCaption, MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
             if(gameStarted)
             {
