@@ -1,4 +1,10 @@
-﻿using System;
+﻿/* ********************************************************************** */
+ *                                                                        *
+ *   Game logic coding done by Vitaly Sinitsky (1977 - 2022)              *
+ *                                                                        *
+/* ********************************************************************** */
+
+using System;
 using libdraw;
 using System.Collections;
 using System.Threading;
